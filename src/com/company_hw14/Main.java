@@ -6,14 +6,22 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int lengthArray = 1;
+        int lengthArray = 3;
         ColorBox[] boxes = new ColorBox[lengthArray];
         for (int i = 0; i < boxes.length; i++) {
             boxes[i] = initializationBox();
         }
         for (int i = 0; i < boxes.length; i++) {
-            System.out.println("box" + i + ": " + boxes[i].toString());
+            System.out.println("Box" + i + ": " + boxes[i].toString());
         }
+
+        Stack<Box> stack = new Warehouse();
+
+        for (Box box : boxes) {
+            stack.push(box);
+        }
+
+        System.out.print(stack);
     }
 
     private static ColorBox initializationBox() {

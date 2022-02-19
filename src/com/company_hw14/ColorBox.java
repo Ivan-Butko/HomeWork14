@@ -25,7 +25,7 @@ public class ColorBox extends Box {
     }
 
     private Color validationColorBox(Color colorTemp) {
-        if (colorTemp.equals(null)) {
+        if (!colorTemp.equals(null)) {
             return colorTemp;
         } else {
             throw new IllegalArgumentException(errorText);

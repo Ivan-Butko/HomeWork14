@@ -68,7 +68,7 @@ public class Box {
     }
 
     private Material validationMaterial(Material materialTemp) {
-        if (materialTemp.equals(null)) {
+        if (!materialTemp.equals(null)) {
             return materialTemp;
         } else {
             throw new IllegalArgumentException(errorText);
