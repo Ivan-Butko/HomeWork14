@@ -1,12 +1,14 @@
 package com.company_hw14;
 
+import com.company_hw14.exception.EmptyStackException;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int lengthArray = 3;
+        int lengthArray = 2;
         ColorBox[] boxes = new ColorBox[lengthArray];
         for (int i = 0; i < boxes.length; i++) {
             boxes[i] = initializationBox();
@@ -16,9 +18,12 @@ public class Main {
         }
 
         Stack<Box> stack = new Warehouse();
-
-        for (Box box : boxes) {
-            stack.push(box);
+        try {
+            for (Box box : boxes) {
+                stack.push(box);
+            }
+        } catch (EmptyStackException e) {
+            System.out.println(e.getMessage());
         }
 
         System.out.print(stack);
